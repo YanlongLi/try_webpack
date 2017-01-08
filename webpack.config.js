@@ -1,15 +1,19 @@
+var path = require('path');
 var webpack = require('webpack');
 
 module.exports = {
   entry: {
     index: "./app/index.js",
-    vendor: ["jquery", "bootstrap"] 
+    // vendor: ["jquery", "bootstrap"] 
   },
   output: {
+    path: path.join(__dirname,"dist"),
     filename: "[name].js",
-    path: "./dist"
+    chunkFileName: "[id].bundle.js",
+    publicPath: "/dist/"
   },
   module: {
+    root: ["./", "node_modules"],
     loaders: [
       { test: /bootstrap\/js\//, loader: 'imports?jQuery=jquery'  },
       { test: /\.woff2?(\?v=\d+\.\d+\.\d+)?$/,   loader: "url?limit=10000&minetype=application/font-woff"  },
@@ -19,7 +23,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.js")
+    // new webpack.optimize.CommonsChunkPlugin("vendor", "vendor.js")
     // new webpack.ProvidePlugin({
     //   $: "jquery",
     //   jQuery: "jquery",
