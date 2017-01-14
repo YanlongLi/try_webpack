@@ -1,7 +1,7 @@
 require('bootstrap-webpack');
 import $ from "jquery";
 import angular from "angular";
-import DataModule from "./DataService2.js";
+import DataModule from "../DataService2.js";
 
 function InitBody() {
     var div = $("<div></div>").attr("class", "text-success").text("Hello Webpack");
