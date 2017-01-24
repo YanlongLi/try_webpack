@@ -8,7 +8,8 @@ module.exports = {
     entry: {
         "page/index": "./app/page/index.js",
         "page1/index": "./app/page1/index.js",
-        "page2/index": "./app/page2/index.js"
+        "page2/index": "./app/page2/index.js",
+        "routerApp/index": "./app/routerApp/index.js"
         // "vendor": ["jquery", "bootstrap", "angular"] 
     },
     output: {
